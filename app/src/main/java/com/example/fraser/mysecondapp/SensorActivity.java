@@ -1,6 +1,7 @@
 package com.example.fraser.mysecondapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.SensorEvent;
 import android.os.Bundle;
 import android.os.Vibrator;
@@ -141,5 +142,11 @@ public class SensorActivity extends AppCompatActivity implements SensorEventList
     protected void onResume() {
         super.onResume();
         SM.registerListener(this, mySensor, SensorManager.SENSOR_DELAY_NORMAL);
+    }
+    //open proximity sensor activity
+    public void openProximity(View view) {
+        // Do something in response to button
+        Intent intent = new Intent(this, ProximityActivity.class);
+        startActivity(intent);
     }
 }
